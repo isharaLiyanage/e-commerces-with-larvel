@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers\admin;
+
+use App\Http\Controllers\Controller;
+use App\Models\Products;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+class AdminController extends Controller
+{
+
+    function dashboard()
+    {
+        $users = User::all();
+        return view('admin.Dashbord', compact('users'));
+    }
+
+    function upload()
+    {
+
+        return view('admin.ProductUpload');
+    }
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+            'price' => 'required',
+            'gallery' => 'required|image'
+        ]);
+        if ($validator->fails()) {
+            return back()->with('status', 'Something went wrong');
+        } else {
+            $imageName = time() . "." . $request->gallery->extension();
+            $request->gallery->move(public_path(path: 'img'), $imageName);
+            Products::create([
+
+                'name' => $request->name,
+                'description' => $request->description,
+                'category' => $request->category,
+                'price' => $request->price,
+                'gallery' => $imageName,
+
+            ]);
+        }
+        return redirect('upload')->with('status', 'Post create successfully');
+    }
+}
