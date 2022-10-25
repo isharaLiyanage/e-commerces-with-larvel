@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Products;
-use  Validator;
+use Illuminate\Support\Facades\Validator;
 use Session;
 
 use Illuminate\Http\Request;
@@ -23,7 +23,7 @@ class ProductsController extends Controller
         return view('Product', compact('products', 'product'));
     }
 
-    
+
     function details($id)
     {
         $product = Products::find($id);
@@ -81,11 +81,11 @@ class ProductsController extends Controller
     function orderPlace(Request $req)
     {
         $validator = Validator::make($req->all(), [
-            'user_id' => 'required',
+
             'address' => 'required',
-            'product_id' => 'required',
-            'address' => 'required',
-            'payment_method' => 'required|image'
+
+
+
         ]);
         if ($validator->fails()) {
             return back()->with('status', 'Something went wrong');
@@ -114,5 +114,4 @@ class ProductsController extends Controller
         $products = DB::table('orders')->join('products', 'orders.product_id', '=', 'products.id')->where('orders.user_id', $userId)->get();
         return view('myorders', compact('products'));
     }
-   
 }

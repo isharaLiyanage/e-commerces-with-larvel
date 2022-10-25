@@ -4,6 +4,15 @@
 
   <div class="cart-product m-5">
     <h3 class=" "> Cart</h3>
+
+    {{-- <?php
+    
+    
+    if(!$products)
+    {echo "<p> Nothing see to cart </p>";} 
+    else {
+     echo"ss";
+    }?> --}}
 @foreach ($products as $item)
 <div class="product-cart">
     <div class="trending-img ">
@@ -19,14 +28,10 @@
   
     @endforeach
 
-    <?php if(!$products)
-    {echo "";} 
-    else {
-     echo"<p> Nothing see to cart </p>";
-    }?>
+   
  
   </div>
-<a class=" btn  btn-success   <?php if(!$products)
+<a class=" btn  btn-success   <?php if($products)
 {echo "";} 
 else {
  echo"d-none";
