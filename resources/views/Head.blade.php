@@ -31,11 +31,14 @@
         
     <div class="nav-container">
     
-{{View::make('navbar')}}
+
+
+{{return View('navbar')}}
 
 
         @yield('content')
-{{View::make('footer')}}
+        {{return View('footer')}}
+
 
     </div>
        
