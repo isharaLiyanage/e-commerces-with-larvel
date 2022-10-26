@@ -1,4 +1,4 @@
-<div class="container">
+{{-- <div class="container">
     <footer class="py-5">
       <div class="row">
         <div class="col-2">
@@ -42,4 +42,4 @@
         </ul>
       </div>
     </footer>
-  </div>
+  </div> --}}

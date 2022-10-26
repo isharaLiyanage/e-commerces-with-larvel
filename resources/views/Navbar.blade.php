@@ -1,4 +1,4 @@
-
+{{-- 
 <?php 
 use App\Http\Controllers\ProductsController;
 $total= ProductsController::cartItem();
@@ -74,4 +74,4 @@ $total= ProductsController::cartItem();
 
 
 
-      
+       --}}
