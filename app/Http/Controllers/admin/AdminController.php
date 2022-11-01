@@ -17,13 +17,13 @@ class AdminController extends Controller
         $users = User::all();
         $orders = Order::all();
         $products = Products::all();
-        return view('admin.Dashbord', compact('users', 'orders', 'products'));
+        return view('Admin.Dashbord', compact('users', 'orders', 'products'));
     }
 
     function upload()
     {
 
-        return view('admin.ProductUpload');
+        return view('Admin.ProductUpload');
     }
 
     public function store(Request $request)
