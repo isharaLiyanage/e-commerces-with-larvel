@@ -180,7 +180,7 @@
       <img src="{{ asset('img/' . $item->gallery)}}" alt="" class=" m-auto">
     </div>
     <div class="  ">
-      <h6 class="h6 text-center trending-text">{{$item["name"]}}</h6>
+      <h6 class="h6 text-center trending-text">{{substr($item["name"],0,20) }}...</h6>
     </div></a>
   </div>
     @endforeach
