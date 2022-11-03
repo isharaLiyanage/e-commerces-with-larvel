@@ -15,13 +15,17 @@ A complete e-commerce website for my personal project list
 To get Admin panel
 
 ```bash
-  Email : email@gmail.com
+  name : admin
+  Email : admin@gmail.com
   Password : password
 ```
 
 ## Demo
 
 http://ecomlarvel.herokuapp.com/home
+
+For Admin (first, you need log as a admin)
+https://ecomlarvel.herokuapp.com/dashboard
 
 ## Installation
 
