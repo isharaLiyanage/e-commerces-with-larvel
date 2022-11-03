@@ -177,7 +177,7 @@
 <div class="trending-flex">
 <a class=" text-decoration-none" href="{{ route('details', $item["id"])}}">
     <div class="trending-img img-fluid ">
-      <img src="{{ asset('img/' . $item->gallery)}}" alt="" class=" m-auto">
+      <img src="{{ asset('storage/' . $item->gallery)}}" alt="" class=" m-auto">
     </div>
     <div class="  ">
       <h6 class="h6 text-center trending-text">{{substr($item["name"],0,20) }}...</h6>
@@ -197,11 +197,11 @@
 @foreach ($product as $item)
 <li class=" recent-flex-li ">
     <div class="trending-img img-fluid ">
-      <img src="{{ asset('img/' . $item->gallery)}}" alt="" class=" m-auto">
+      <img src="{{ asset('storage/' . $item->gallery)}}" alt="" class=" m-auto">
     </div>
     <div class="  ">
 <a class=" text-decoration-none" href="{{ route('details', $item["id"])}}">
-  <h6 class="h6 text-center trending-text">{{$item["name"]}}</h6></a>
+  <h6 class="h6 text-center trending-text">{{substr($item["name"],0,20) }}...</h6></a>
     </div>
   </li>
     @endforeach

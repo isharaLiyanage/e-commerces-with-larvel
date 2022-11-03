@@ -54,6 +54,40 @@
 
 
 <div class="">
+    <h2 class=" pt-5">Orders</h2>
+
+<table class="table">
+<tr>
+    <th>Id</th>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    
+
+
+</tr>
+
+
+
+@foreach ($products as $product)
+<tr>
+
+   <td> <div class="">  {{$product->id}}</div> </td>
+   <td> <div class="">  {{$product->product_id}}</div>  </td>
+   <td> <div class="">  {{$product->name}}</div>  </td>
+
+    
+
+ 
+
+@endforeach
+</tr>
+</table>
+
+</div>
+
+
+
+<div class="">
 
     <h2 class=" pt-5">Users</h2>
    <table class=" table">

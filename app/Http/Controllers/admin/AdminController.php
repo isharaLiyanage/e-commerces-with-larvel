@@ -39,7 +39,7 @@ class AdminController extends Controller
             return back()->with('status', 'Something went wrong');
         } else {
             $imageName = time() . "." . $request->gallery->extension();
-            $request->gallery->move(public_path(path: 'img'), $imageName);
+            $request->gallery->move(public_path(path: 'storage'), $imageName);
             Products::create([
 
                 'name' => $request->name,

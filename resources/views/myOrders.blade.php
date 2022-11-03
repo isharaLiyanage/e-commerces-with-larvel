@@ -7,7 +7,7 @@
 @foreach ($products as $item)
 <div class="product-cart">
     <div class="trending-img ">
-      <img src="{{asset('img/' . $item->gallery)}}" alt="">
+      <img src="{{asset('storage/' . $item->gallery)}}" alt="">
     </div></div>
     <div class=" cart-text ">
       <a  class=" text-decoration-none" href="{{ route('details', $item->id)}}">
